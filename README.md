@@ -37,7 +37,7 @@ $vk->request($method, $callback = []);
 ```
 #### Request:
 ```php
-$vk->request('users.get', ['user_ids' => '391726310']);
+$user_info = $vk->request('users.get', ['user_ids' => '391726310']);
 ```
 #### Response:
 ```JSON
@@ -52,7 +52,10 @@ $vk->request('users.get', ['user_ids' => '391726310']);
     ]
 }
 ```
-
+#### Output:
+```php
+echo 'Name: ' . $user_info['response'][0]['first_name']; // Name: Sherzod
+```
 Example
 ---------------
 ```php
