@@ -1,15 +1,18 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-circle)](https://php.net/)
 
-
 vk
 =======
 VK API client for chatbots with support v. 5.80.
 
 Documentation
 ---------------
+* [Beginning of work](https://github.com/mamadaliev/vk#Beginning-of-work)
+* [The universal method](https://github.com/mamadaliev/vk#The-universal-method)
+* [Example](https://github.com/mamadaliev/vk#Example)
 
-### Beginning of work
+Beginning of work
+---------------
 ```php
 // config.php
 
@@ -24,7 +27,8 @@ require_once('vk.php'); // connection library for working with VK API
 $vk = new VK();         // creating a VK class object
 ```
 
-### The universal method
+The universal method
+---------------
 ```php
 $vk->request($method, $callback = []);
 
@@ -41,10 +45,13 @@ $vk->request('users.get', ['user_ids' => '391726310']);
     "response":
     [
         {
-        "id": 391726310,
-        "first_name": "Sherzod",
-        "last_name": "Mamadaliev"
+            "id": 391726310,
+            "first_name": "Sherzod",
+            "last_name": "Mamadaliev"
         }
     ]
 }
 ```
+
+Example
+---------------
