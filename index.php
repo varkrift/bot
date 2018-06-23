@@ -9,11 +9,15 @@ if ($vk->data['type'] == 'message_new')
     $text = $vk->data['object']['text'];        // incoming message
 
     if ($text == 'Start') // if the text is Start, it will send a Started message.
-	{
+    {
         $vk->send($peer_id, 'Started');
     }
-	else
-	{
-    	$vk->send($peer_id, 'Error'); // error
+    elseif ($text == 'Hi') // if the text is Hi, it will send a Hello message.
+    {
+        $vk->send($peer_id, 'Hello');
+    }
+    else
+    {
+        $vk->send($peer_id, 'Error'); // error
     }
 }
