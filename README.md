@@ -1,10 +1,15 @@
-# vk
+[![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat-circle)](https://php.net/)
+
+
+vk
+=======
 VK API client for chatbots with support v. 5.80.
 
+Documentation
+---------------
 
-## Documentation
-
-### I. Beginning of work
+### Beginning of work
 ```php
 // config.php
 
@@ -18,9 +23,8 @@ define('KEY', '4cw0de5e');          // your security key
 require_once('vk.php'); // connection library for working with VK API
 $vk = new VK();         // creating a VK class object
 ```
-******************************************
 
-### II. The universal method
+### The universal method
 ```php
 $vk->request($method, $callback = []);
 
