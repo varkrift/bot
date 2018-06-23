@@ -7,9 +7,9 @@ VK API client for chatbots with support v. 5.80.
 
 Documentation
 ---------------
-* [Beginning of work](https://github.com/mamadaliev/vk#Beginning-of-work)
-* [The universal method](https://github.com/mamadaliev/vk#The-universal-method)
-* [Example](https://github.com/mamadaliev/vk#Example)
+* [Beginning of work](https://github.com/mamadaliev/vk#beginning-of-work)
+* [The universal method](https://github.com/mamadaliev/vk#the-universal-method)
+* [Example](https://github.com/mamadaliev/vk#example)
 
 Beginning of work
 ---------------
@@ -55,3 +55,27 @@ $vk->request('users.get', ['user_ids' => '391726310']);
 
 Example
 ---------------
+```php
+require_once('vk.php'); // connection library for working with VK API
+
+$vk = new VK();         // creating a VK class object
+
+if ($vk->data['type'] == 'message_new') // if there is an event message_new
+{
+    $peer_id = $vk->data['object']['peer_id'];  // user ID
+    $text = $vk->data['object']['text'];        // incoming message
+
+    if ($text == 'Start') // if the text is Start, it will send a Started message.
+    {
+        $vk->send($peer_id, 'Started');
+    }
+    elseif ($text == 'Hi') // if the text is Hi, it will send a Hello message.
+    {
+        $vk->send($peer_id, 'Hello');
+    }
+    else
+    {
+        $vk->send($peer_id, 'Error'); // error
+    }
+}
+```
