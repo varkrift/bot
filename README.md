@@ -31,10 +31,12 @@ The universal method
 ---------------
 ```php
 $vk->request($method, $callback = []);
-
-// $method      - methods of VK API
-// $callback    - array of transmitted fields
 ```
+
+``$method``      - [methods of VK API](https://vk.com/dev/methods)
+
+``$callback``    - array of transmitted fields
+
 #### Request:
 ```php
 $user_info = $vk->request('users.get', ['user_ids' => '391726310']);
